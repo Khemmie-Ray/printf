@@ -1,46 +1,25 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef _MAIN_H
+#define _MAIN_H
 
 #include <stdarg.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <limits.h>
-#include <stdlib.h>
 
-/**
- *  * struct format - match the conversion specifiers for printf
- *  @id: type char pointer of the specifier i.e (l, h) for (d, i, u, o, x, X)
- *    * @f: type pointer to function for the conversion specifier
- */
-
-typedef struct format
-{
-	char *id;
-	int (*f)();
-} convert_match;
-
-int printf_pointer(va_list val);
-int printf_hex_aux(unsigned long int num);
-int printf_HEX_aux(unsigned int num);
-int printf_exclusive_string(va_list val);
-int printf_HEX(va_list val);
-int printf_hex(va_list val);
-int printf_oct(va_list val);
-int printf_unsigned(va_list args);
-int printf_bin(va_list val);
-int printf_srev(va_list args);
-int printf_rot13(va_list args);
-int printf_int(va_list args);
-int printf_dec(va_list args);
-int _strlen(char *s);
-int *_strcpy(char *dest, char *src);
-int _strlenc(const char *s);
-int rev_string(char *s);
-int _strlenc(const char *s);
-int printf_37(void);
-int printf_char(va_list val);
-int printf_string(va_list val);
 int _putchar(char c);
+void _puts(char *str);
+int _strlen(char *s);
 int _printf(const char *format, ...);
+char *convert_to(char representation[], unsigned int num, int base);
+int funct_mgr(char c, va_list arg);
+int _switch(char c, va_list arg);
+int print_character(va_list arg);
+int print_sign(va_list arg, int base);
+int print_unsign(va_list arg, int base);
+int print_string(va_list arg);
+int print_ptr(va_list arg);
+int print_rot13(va_list arg);
+int print_rev(va_list arg);
+int print_base16_upper_lower(va_list arg, char *representation);
+int loop_format(va_list arg, const char *string);
+int call_funct_mgr(char aux, va_list arg);
+int check_percent(int *flag, char aux);
 
 #endif
