@@ -23,7 +23,7 @@ int funct_mgr(char c, va_list arg)
  *  *_switch - switch
  *   *@c: character to find
  *    *@arg: va_list type
- *     *Description: This function evaluate cases
+ *     *Description: This function does evaluate cases
  *      *Return: count of printed characters
  */
 
